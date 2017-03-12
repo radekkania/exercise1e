@@ -19,10 +19,10 @@ public class CalculatorUtilAdditionTest {
 		calculator = Mockito.mock(Calculator.class);
 		calcUtil = new CalculatorUtil(calculator);
 	}
-
+ 
 	@Test
 	public void test2plus2() {
-		// given
+		// given 
 		doReturn(4).when(calculator).add(anyInt(), anyInt());
 
 		// when

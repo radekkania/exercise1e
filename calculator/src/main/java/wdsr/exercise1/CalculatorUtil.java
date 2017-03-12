@@ -19,7 +19,7 @@ public class CalculatorUtil {
 	
 	public String getDivisionText(final int a, final int b) {
 		return String.format("%s / %s = %s", a, b, calculator.divide(a, b));
-	}
+	} 
 	
 	public String getModuloText(final int a, final int b) {
 		return String.format("%s %% %s = %s", a, b, calculator.modulo(a, b));

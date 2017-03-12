@@ -1,7 +1,11 @@
 package wdsr.exercise1;
 
+import static org.hamcrest.CoreMatchers.equalTo;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
 import static org.junit.Assert.fail;
+import static org.mockito.Matchers.anyInt;
+import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.when;
 
 import org.junit.Before;
@@ -19,10 +23,17 @@ public class CalculatorUtilSubtractionTest {
 		calculator = Mockito.mock(Calculator.class);
 		calcUtil = new CalculatorUtil(calculator);
 	}
-
+	
 	@Test
 	public void test3minus1() {
-		fail("Not yet implemented");
+		// given
+		doReturn(2).when(calculator).subtract(anyInt(), anyInt());
+		
+		// when
+		String result = calcUtil.getSubstractionText(3, 1);
+		
+		// then
+		assertThat(result, equalTo("3 - 1 = 2"));
 	}
 
 	@Test
@@ -32,8 +43,9 @@ public class CalculatorUtilSubtractionTest {
 
 		// when
 		String actual = calcUtil.getSubstractionText(-3, -1);
-
 		// then
 		assertEquals("(-3) - (-1) = (-2)", actual);
+		//wg mnie powinno byc 3 - (-1) = -2;
+		//fix: dodac if jesli b mniejsze od zera to (%s)
 	}
 }
