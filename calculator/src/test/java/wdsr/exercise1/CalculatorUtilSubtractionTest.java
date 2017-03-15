@@ -44,8 +44,6 @@ public class CalculatorUtilSubtractionTest {
 		// when
 		String actual = calcUtil.getSubstractionText(-3, -1);
 		// then
-		assertEquals("(-3) - (-1) = (-2)", actual);
-		//wg mnie powinno byc 3 - (-1) = -2;
-		//fix: dodac if jesli b mniejsze od zera to (%s)
+		assertEquals("-3 - -1 = -2", actual);
 	}
 }
